@@ -1,0 +1,36 @@
+<html lang="en">
+	<head>
+		<title>Lethalin - Front-end web development made easy</title>
+		<meta charset="utf-8">
+		<meta content="IE=edge" http-equiv="X-UA-Compatible">
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<meta name="author" content="">
+		<meta name="description" content="">
+		<!-- Lethalin -->
+		<link href="css/style.css" rel="stylesheet">
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i" rel="stylesheet">
+	</head>
+	<body>
+		<div id="app">
+		  <div class="grid">
+			<div class="column">
+			  <h5>Create a Post</h5>
+			  <input type="text" v-model.trim="newPostTitle" @keyup.enter="addPost" placeholder="Post Title">
+			  <input type="text" v-model.trim="newPostBody" @keyup.enter="addPost" placeholder="Post Body">
+			</div>
+			<div class="column">
+			  <h5>Posts</h5>
+			  <ul>
+				<li v-for="post in posts">
+				 <div class="timestamp">{{ post.timestamp }}</div>
+				 <div class="title">{{ post.title }}</div>
+				  <div class="body">{{ post.body }}</div>
+				  <button class="button" @click="removePost(post)">Delete Post</button>
+				</li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	</body>
+</html>
